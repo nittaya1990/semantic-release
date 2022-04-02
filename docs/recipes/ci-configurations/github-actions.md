@@ -2,7 +2,7 @@
 
 ## Environment variables
 
-The [Authentication](../usage/ci-configuration.md#authentication) environment variables can be configured with [Secret Variables](https://docs.github.com/en/actions/reference/encrypted-secrets).
+The [Authentication](../../usage/ci-configuration.md#authentication) environment variables can be configured with [Secret Variables](https://docs.github.com/en/actions/reference/encrypted-secrets).
 
 In this example a publish type [`NPM_TOKEN`](https://docs.npmjs.com/creating-and-viewing-authentication-tokens) is required to publish a package to the npm registry. GitHub Actions [automatically populate](https://help.github.com/en/articles/virtual-environments-for-github-actions#github_token-secret) a [`GITHUB_TOKEN`](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) environment variable which can be used in Workflows.
 
@@ -10,11 +10,11 @@ In this example a publish type [`NPM_TOKEN`](https://docs.npmjs.com/creating-and
 
 [GitHub Actions](https://github.com/features/actions) support [Workflows](https://help.github.com/en/articles/configuring-workflows), allowing to run tests on multiple Node versions and publish a release only when all test pass.
 
-**Note**: The publish pipeline must run on [Node version >= 14.17](../support/FAQ.md#why-does-semantic-release-require-node-version--1417).
+**Note**: The publish pipeline must run on a [Node version that meets our version requirement](../../support/node-version.md).
 
 ### `.github/workflows/release.yml` configuration for Node projects
 
-The following is a minimal configuration for [`semantic-release`](https://github.com/semantic-release/semantic-release) with a build running on Node 14.17 when a new commit is pushed to a `master` branch.
+The following is a minimal configuration for [`semantic-release`](https://github.com/semantic-release/semantic-release) with a build running on the latest LTS version of Node when a new commit is pushed to a `master` branch.
 See [Configuring a Workflow](https://help.github.com/en/articles/configuring-a-workflow) for additional configuration options.
 
 ```yaml
